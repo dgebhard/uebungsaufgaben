@@ -22,6 +22,8 @@ class Autor
      * @param $fname string
      * @param $lname string
      * @param $mail string
+     *
+     * @throws InvalidArgumentException
      */
     function __construct($fname, $lname, $mail)
     {

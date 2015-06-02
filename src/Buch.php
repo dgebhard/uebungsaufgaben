@@ -35,6 +35,8 @@ class Buch
      * @param $year int
      * @param $nrOfPages int
      * @param $genre string
+     *
+     * @throws InvalidArgumentException
      */
     function __construct($title,Autor $author, $year, $nrOfPages, $genre)
     {
