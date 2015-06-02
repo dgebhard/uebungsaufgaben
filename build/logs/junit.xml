@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="OrderStats" tests="1" assertions="1" failures="0" errors="0" time="0.005270">
-    <testsuite name="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.005270">
-      <testcase name="testDummy" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="21" assertions="1" time="0.005270"/>
+  <testsuite name="OrderStats" tests="5" assertions="6" failures="0" errors="0" time="0.033846">
+    <testsuite name="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" tests="5" assertions="6" failures="0" errors="0" time="0.033846">
+      <testcase name="testDummy" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="21" assertions="1" time="0.005764"/>
+      <testcase name="testGetFullName" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="26" assertions="1" time="0.004529"/>
+      <testcase name="testGetPlace" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="30" assertions="1" time="0.014620"/>
+      <testcase name="testGetAddress" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="34" assertions="1" time="0.003895"/>
+      <testcase name="testAlreadyAsked" class="PersonTest" file="/var/www/Uebungsaufgaben/tests/PersonTest.php" line="38" assertions="2" time="0.005038"/>
     </testsuite>
   </testsuite>
 </testsuites>

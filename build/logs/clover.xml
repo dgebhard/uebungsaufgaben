@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1433230579">
-  <project timestamp="1433230579">
+<coverage generated="1433236361">
+  <project timestamp="1433236361">
     <file name="/var/www/Uebungsaufgaben/src/Person.php">
       <class name="Person" namespace="global">
-        <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics methods="8" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="20" elements="32" coveredelements="26"/>
       </class>
-      <metrics loc="13" ncloc="7" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <line num="21" type="method" name="Person" crap="1" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="25" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="27" type="stmt" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <line num="29" type="stmt" count="5"/>
+      <line num="30" type="stmt" count="5"/>
+      <line num="32" type="stmt" count="5"/>
+      <line num="33" type="stmt" count="5"/>
+      <line num="34" type="stmt" count="5"/>
+      <line num="36" type="method" name="getFullName" crap="1" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="43" type="method" name="getPlace" crap="1" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="49" type="method" name="getBirthdate" crap="2" count="0"/>
+      <line num="51" type="stmt" count="0"/>
+      <line num="52" type="stmt" count="0"/>
+      <line num="55" type="method" name="getPhoneNumber" crap="2" count="0"/>
+      <line num="57" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="0"/>
+      <line num="61" type="method" name="getAlreadyAsked" crap="1" count="1"/>
+      <line num="63" type="stmt" count="1"/>
+      <line num="66" type="method" name="getFavColor" crap="1" count="1"/>
+      <line num="68" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="72" type="method" name="getAddress" crap="1" count="1"/>
+      <line num="74" type="stmt" count="1"/>
+      <metrics loc="75" ncloc="69" classes="1" methods="8" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="20" elements="32" coveredelements="26"/>
     </file>
-    <metrics files="1" loc="13" ncloc="7" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    <metrics files="1" loc="75" ncloc="69" classes="1" methods="8" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="24" coveredstatements="20" elements="32" coveredelements="26"/>
   </project>
 </coverage>
