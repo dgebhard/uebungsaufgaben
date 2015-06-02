@@ -57,7 +57,7 @@ class Person
      * @param string $phone
      * @param string $favcolor
      */
-    function Person($fname, $lname, $address, $zip, $place, $birthdate, $phone, $favcolor)
+    function __construct($fname, $lname, $address, $zip, $place, $birthdate, $phone, $favcolor)
     {
         $this->fname = $fname;
         $this->lname = $lname;
@@ -68,7 +68,7 @@ class Person
         $this->phone = $phone;
         $this->favcolor = $favcolor;
 
-        $keys = array('fname','lname','address','zip','place','birthdate','phone','favcolor');
+        $keys = array('fname', 'lname', 'address', 'zip', 'place', 'birthdate', 'phone', 'favcolor');
         $this->alreadyAsked = array_fill_keys($keys, false);
     }
 
@@ -110,16 +110,17 @@ class Person
     }
 
     /**
-     * @param $var
+     * @param $var string
      *
-     * @return mixed
+     * @return bool
+     * @throws InvalidArgumentException
      */
     public function getAlreadyAsked($var)
     {
         if (array_key_exists($var, $this->alreadyAsked)) {
             return $this->alreadyAsked[$var];
         } else {
-            return "key does not exist";
+            throw new InvalidArgumentException('key does not exist');
         }
     }
 

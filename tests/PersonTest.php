@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dev
- * Date: 6/2/15
- * Time: 9:26 AM
- */
 
+/**
+ * @covers Person
+ */
 class PersonTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -64,6 +61,8 @@ class PersonTest extends PHPUnit_Framework_TestCase
         $this->person->getFavColor();
         $this->assertTrue($this->person->getAlreadyAsked('favcolor'));
         $this->assertFalse($this->person->getAlreadyAsked('phone'));
-        $this->assertEquals($this->person->getAlreadyAsked('dfaf'), 'Key does not exist');
+
+        $this->setExpectedException('InvalidArgumentException');
+        $this->person->getAlreadyAsked('dfaf');
     }
 }
