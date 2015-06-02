@@ -5,12 +5,12 @@ class Autor
     /**
      * @var string
      */
-    private $fname;
+    private $firstName;
 
     /**
      * @var string
      */
-    private $lname;
+    private $lastName;
 
     /**
      * @var string
@@ -19,21 +19,28 @@ class Autor
 
 
     /**
-     * @param $fname string
-     * @param $lname string
-     * @param $mail string
-     *
-     * @throws InvalidArgumentException
+     * @param string $firstName
+     * @param string $lastName
+     * @param string $mail
      */
-    function __construct($fname, $lname, $mail)
+    function __construct($firstName, $lastName, $mail)
     {
-        if (is_string($fname) && is_string($lname) && is_string($mail) && filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $this->fname = $fname;
-            $this->lname = $lname;
-            $this->mail = $mail;
-        } else {
-            throw new InvalidArgumentException('Invalid Arguments');
+        if (!is_string($firstName)) {
+            throw new InvalidArgumentException('Der Vorname "'.$firstName.'" ist nicht gültig');
         }
+
+        if (!is_string($lastName)) {
+            throw new InvalidArgumentException('Der Nachname "'.$lastName.'" ist nicht gültig');
+        }
+
+        if (!is_string($mail) || !filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+            throw new InvalidArgumentException('Die E-Mail "'.$mail.'" ist nicht gültig');
+        }
+
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->mail = $mail;
+
     }
 
     /**

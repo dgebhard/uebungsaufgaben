@@ -68,7 +68,7 @@ class Person
         $this->phone = $phone;
         $this->favcolor = $favcolor;
 
-        $keys = array('fname', 'lname', 'address', 'zip', 'place', 'birthdate', 'phone', 'favcolor');
+        $keys = array('firstName', 'lastName', 'address', 'zip', 'place', 'birthdate', 'phone', 'favcolor');
         $this->alreadyAsked = array_fill_keys($keys, false);
     }
 
@@ -77,8 +77,8 @@ class Person
      */
     public function getFullName()
     {
-        $this->alreadyAsked['fname'] = true;
-        $this->alreadyAsked['lname'] = true;
+        $this->alreadyAsked['firstName'] = true;
+        $this->alreadyAsked['lastName'] = true;
         return $this->fname." ".$this->lname;
     }
 
