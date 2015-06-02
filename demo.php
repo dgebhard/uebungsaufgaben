@@ -1,10 +1,6 @@
 <?php
 require 'src/autoload.php';
 
-$person = new Person('Dominik','Gebhard','Altstr. 3','5103','Möriken','02.02.1997','252523552434','blau');
-
-var_dump($person);
-
-var_dump($person->getPhoneNumber());
-var_dump($person->getAlreadyAsked('fname'));
-var_dump($person->getAlreadyAsked('phone'));
+$autor = new Autor('Dominik', 'Gebhard', 'dominik.gebhard@competec.ch');
+$book = new Buch('PHP für Dummies', $autor, 2012, 50, 'IT');
+echo $book->getAuthor()->getEmail();
