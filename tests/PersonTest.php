@@ -35,6 +35,14 @@ class PersonTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($this->person->getAddress(),'Altstr. 3');
     }
 
+    public function testGetBirthdate(){
+        $this->assertEquals($this->person->getBirthdate(),'02.02.1997');
+    }
+
+    public function testGetPhoneNumber(){
+        $this->assertEquals($this->person->getPhoneNumber(),'252523552434');
+    }
+
     public function testAlreadyAsked(){
         $this->person->getFavColor();
         $this->assertTrue($this->person->getAlreadyAsked('favcolor'));
