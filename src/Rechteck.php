@@ -42,7 +42,7 @@ class Rechteck implements Figure
      */
     public function getDiagonale()
     {
-        return sqrt($this->seiteA+$this->seiteB);
+        return sqrt(pow($this->seiteA, 2) + pow($this->seiteB, 2));
     }
 
     /**
