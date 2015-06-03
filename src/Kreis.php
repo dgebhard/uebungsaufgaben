@@ -13,7 +13,7 @@
          *
          * @throws InvalidArgumentException
          */
-        public function __construct($radius)
+        function __construct($radius)
         {
             if (!is_numeric($radius) || $radius < 0) {
                 throw new InvalidArgumentException('Der Radius "'.$radius.'" ist nicht gültig');
