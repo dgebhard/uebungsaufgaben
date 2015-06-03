@@ -2,6 +2,7 @@
 
 /**
  * @covers Quadrat
+ * @covers Rechteck
  */
 class QuadratTest extends PHPUnit_Framework_TestCase
 {
@@ -17,24 +18,24 @@ class QuadratTest extends PHPUnit_Framework_TestCase
 
     public function testCalculateSquareAreaWithDouble()
     {
-        $this->assertEquals($this->quadrat->getFlaeche(), 18.49);
+        $this->assertEquals(18.49, $this->quadrat->getFlaeche());
     }
 
     public function testCalculateSquareGirthWithDouble()
     {
-        $this->assertEquals($this->quadrat->getUmfang(), 17.2);
+        $this->assertEquals(17.2, $this->quadrat->getUmfang());
     }
 
     public function testCalculateSquareDiagonalWithDouble()
     {
-        $this->assertEquals($this->quadrat->getDiagonale(), sqrt(36.98));
+        $this->assertEquals(sqrt(36.98), $this->quadrat->getDiagonale());
     }
 
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testSquareConstructorWithTextStringParameter()
+    public function testSquareConstructorWithTextStringParameterThrowsInvalidArgumentsException()
     {
-        $quadrat = new Quadrat('5d');
+        new Quadrat('5d');
     }
 }

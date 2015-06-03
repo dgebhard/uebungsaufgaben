@@ -17,32 +17,40 @@ class RechteckTest extends PHPUnit_Framework_TestCase
 
     public function testCalculateRectangleAreaWithDouble()
     {
-        $this->assertEquals($this->rechteck->getFlaeche(), 20.21);
+        $this->assertEquals(20.21, $this->rechteck->getFlaeche());
     }
 
     public function testCalculateRectangleGirthWithDouble()
     {
-        $this->assertEquals($this->rechteck->getUmfang(), 18);
+        $this->assertEquals(18, $this->rechteck->getUmfang());
     }
 
     public function testCalculateRectangleDiagonalWithDouble()
     {
-        $this->assertEquals($this->rechteck->getDiagonale(), sqrt(40.58));
+        $this->assertEquals(sqrt(40.58), $this->rechteck->getDiagonale());
     }
 
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testConstructorWithInvalidSideA()
+    public function testConstructorWithInvalidSideAThrowsInvalidArgumentsException()
     {
-        $rechteck = new Rechteck('5d', 27);
+        new Rechteck('5d', 27);
     }
 
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testConstructorWithInvalidSideB()
+    public function testConstructorWithInvalidSideBThrowsInvalidArgumentsException()
     {
-        $rechteck = new Rechteck(213, 'hallo');
+        new Rechteck(213, 'hallo');
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCircleConstructorWithNegativeParametersThrowsInvalidArgumentsException()
+    {
+        new Rechteck(-35, -5);
     }
 }

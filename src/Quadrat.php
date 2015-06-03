@@ -3,23 +3,16 @@
 class Quadrat extends Rechteck
 {
     /**
+     * @var float|null
+     */
+    private $sqrtTwo;
+
+    /**
      * @param double $seite
      */
     public function __construct($seite)
     {
-        if (!is_numeric($seite) || $seite < 0) {
-            throw new InvalidArgumentException('Die Seite "'.$seite.'" ist nicht gültig');
-        }
-
-        $this->seite = (double) $seite;
-    }
-
-    /**
-     * @return double
-     */
-    public function getUmfang()
-    {
-        return $this->seite*4;
+        parent::__construct($seite, $seite);
     }
 
     /**
@@ -27,14 +20,17 @@ class Quadrat extends Rechteck
      */
     public function getDiagonale()
     {
-        return sqrt(2)*$this->seite;
+        return $this->getSqrtTwo() * $this->seiteA;
     }
 
     /**
-     * @return double
+     * @return float
      */
-    public function getFlaeche()
+    private function getSqrtTwo()
     {
-        return pow($this->seite, 2);
+        if ($this->sqrtTwo == null) {
+            $this->sqrtTwo = sqrt(2);
+        }
+        return $this->sqrtTwo;
     }
 }

@@ -6,12 +6,12 @@ class Rechteck implements Figure
     /**
      * @var double
      */
-    private $seiteA;
+    protected $seiteA;
 
     /**
      * @var double
      */
-    private $seiteB;
+    protected $seiteB;
 
     /**
      * @param double $seiteA

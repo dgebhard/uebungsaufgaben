@@ -33,7 +33,7 @@ class BuchTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testCreateBookWithEmptyTitle()
+    public function testCreateBookWithEmptyTitleThrowsInvalidArgumentsException()
     {
         $book = new Buch('', $this->author, 2011, 412, 'IT');
     }
@@ -41,7 +41,7 @@ class BuchTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testCreateBookWithZeroPages()
+    public function testCreateBookWithZeroPagesThrowsInvalidArgumentsException()
     {
         $book = new Buch('Testbuch', $this->author, 2011, 0, 'IT');
     }
@@ -55,7 +55,7 @@ class BuchTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testCreateBookWithInvalidYear()
+    public function testCreateBookWithInvalidYearThrowsInvalidArgumentsException()
     {
         $book = new Buch('Testbuch', $this->author, -1, 343, 'IT');
     }
@@ -63,7 +63,7 @@ class BuchTest extends PHPUnit_Framework_TestCase
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testCreateBookWithIntValueInsteadOfString()
+    public function testCreateBookWithIntValueInsteadOfStringThrowsInvalidArgumentsException()
     {
         $book = new Buch('Testbuch', $this->author, 2010, 343, 1234);
     }

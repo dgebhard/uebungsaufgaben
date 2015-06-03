@@ -17,24 +17,32 @@ class KreisTest extends PHPUnit_Framework_TestCase
 
     public function testCalculateCircleAreaWithDouble()
     {
-        $this->assertEquals($this->kreis->getFlaeche(), 91.60884177867837083357068105643);
+        $this->assertEquals(91.60884177867837083357068105643, $this->kreis->getFlaeche());
     }
 
     public function testCalculateCircleGirthWithDouble()
     {
-        $this->assertEquals($this->kreis->getUmfang(), 33.929200658769766975396548539419);
+        $this->assertEquals(33.929200658769766975396548539419, $this->kreis->getUmfang());
     }
 
     public function testCalculateCircleDiagonalWithDouble()
     {
-        $this->assertEquals($this->kreis->getDiagonale(), 10.8);
+        $this->assertEquals(10.8, $this->kreis->getDiagonale());
     }
 
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testCircleConstructorWithTextStringParameter()
+    public function testCircleConstructorWithTextStringParameterThrowsInvalidArgumentsException()
     {
         $kreis = new Kreis('erf');
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCircleConstructorWithNegativeParameterThrowsInvalidArgumentsException()
+    {
+        $kreis = new Kreis(-35);
     }
 }
