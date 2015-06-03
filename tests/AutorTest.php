@@ -5,10 +5,14 @@
  */
 class AutorTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var Autor
+     */
+    private $author;
 
     public function setup()
     {
-        //empty
+        $this->author = new Autor('Dominik', 'Gebhard', 'dominik.gebhard@competec.ch');
     }
 
     /**
@@ -33,6 +37,26 @@ class AutorTest extends PHPUnit_Framework_TestCase
     public function testCreateAutorWithEmptyEmailThrowsInvalidArgumentsException()
     {
         $author = new Autor('Dominik', 'Gebhard', '');
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateAutorWithFirstNameTypeInt()
+    {
+        $author = new Autor(44, 'Gebhard', 'mail@mail.com');
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateAutorWithLastNameTypeInt()
+    {
+        $author = new Autor('Dominik', 44, 'mail@mail.com');
+    }
+
+    public function testGetEmailFromAutorWithValidAttributes(){
+        $this->assertEquals($this->author->getEmail(), 'dominik.gebhard@competec.ch');
     }
 
 }

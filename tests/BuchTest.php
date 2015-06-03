@@ -2,12 +2,11 @@
 
 /**
  * @covers Buch
- * @covers Autor
  */
 class BuchTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @var Autor
+     * @var PHPUnit_Framework_MockObject_MockObject
      */
     private $author;
 
@@ -19,13 +18,16 @@ class BuchTest extends PHPUnit_Framework_TestCase
 
     public function setup()
     {
-        $this->author = new Autor('Dominik', 'Gebhard', 'dominik.gebhard@competec.ch');
+        $this->author = $this->getMockBuilder(Autor::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $this->book = new Buch('PHP for Dummies', $this->author, 2011, 412, 'IT');
     }
 
-    public function testGetAuthorReturnsAndInstanceOfAuthorAndEmailCanBeAsked()
+    public function testGetAuthorReturnsAndInstanceOfAuthor()
     {
-        $this->assertEquals($this->book->getAuthor()->getEmail(), 'dominik.gebhard@competec.ch');
+        $this->assertSame($this->author, $this->book->getAuthor());
     }
 
     /**
@@ -44,9 +46,25 @@ class BuchTest extends PHPUnit_Framework_TestCase
         $book = new Buch('Testbuch', $this->author, 2011, 0, 'IT');
     }
 
-    public function testCreateBookWithEmptyGenre()
+    public function testCreateBookWithEmptyGenreCanBeInstantiacted()
     {
-        $book = new Buch('Testbuch', $this->author, 2011, 23,'');
+        $book = new Buch('Testbuch', $this->author, 2011, 23, '');
         $this->assertInstanceOf(Buch::class, $book);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateBookWithInvalidYear()
+    {
+        $book = new Buch('Testbuch', $this->author, -1, 343, 'IT');
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCreateBookWithIntValueInsteadOfString()
+    {
+        $book = new Buch('Testbuch', $this->author, 2010, 343, 1234);
     }
 }
