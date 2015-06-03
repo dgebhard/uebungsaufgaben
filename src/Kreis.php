@@ -4,12 +4,12 @@
     {
 
         /**
-         * @var float
+         * @var double
          */
         private $radius;
 
         /**
-         * @param float $radius
+         * @param double $radius
          *
          * @throws InvalidArgumentException
          */
@@ -18,11 +18,12 @@
             if (!is_numeric($radius) || $radius < 0) {
                 throw new InvalidArgumentException('Der Radius "'.$radius.'" ist nicht gültig');
             }
-            $this->radius = $radius;
+
+            $this->radius = (double) $radius;
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getUmfang()
         {
@@ -30,7 +31,7 @@
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getDiagonale()
         {
@@ -38,7 +39,7 @@
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getFlaeche()
         {

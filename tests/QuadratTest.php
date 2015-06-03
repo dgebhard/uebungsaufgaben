@@ -15,17 +15,17 @@ class QuadratTest extends PHPUnit_Framework_TestCase
         $this->quadrat = new Quadrat(4.3);
     }
 
-    public function testCalculateSquareAreaWithFloat()
+    public function testCalculateSquareAreaWithDouble()
     {
         $this->assertEquals($this->quadrat->getFlaeche(), 18.49);
     }
 
-    public function testCalculateSquareGirthWithFloat()
+    public function testCalculateSquareGirthWithDouble()
     {
         $this->assertEquals($this->quadrat->getUmfang(), 17.2);
     }
 
-    public function testCalculateSquareDiagonalWithFloat()
+    public function testCalculateSquareDiagonalWithDouble()
     {
         $this->assertEquals($this->quadrat->getDiagonale(), sqrt(36.98));
     }

@@ -3,7 +3,7 @@
     class Quadrat extends Rechteck
     {
         /**
-         * @param float $seite
+         * @param double $seite
          */
         public function __construct($seite)
         {
@@ -11,11 +11,11 @@
                 throw new InvalidArgumentException('Die Seite "'.$seite.'" ist nicht gültig');
             }
 
-            $this->seite = $seite;
+            $this->seite = (double) $seite;
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getUmfang()
         {
@@ -23,7 +23,7 @@
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getDiagonale()
         {
@@ -31,7 +31,7 @@
         }
 
         /**
-         * @return float
+         * @return double
          */
         public function getFlaeche()
         {

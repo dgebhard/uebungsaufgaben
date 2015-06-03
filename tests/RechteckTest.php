@@ -15,17 +15,17 @@ class RechteckTest extends PHPUnit_Framework_TestCase
         $this->rechteck = new Rechteck(4.3, 4.7);
     }
 
-    public function testCalculateRectangleAreaWithFloat()
+    public function testCalculateRectangleAreaWithDouble()
     {
         $this->assertEquals($this->rechteck->getFlaeche(), 20.21);
     }
 
-    public function testCalculateRectangleGirthWithFloat()
+    public function testCalculateRectangleGirthWithDouble()
     {
         $this->assertEquals($this->rechteck->getUmfang(), 18);
     }
 
-    public function testCalculateRectangleDiagonalWithFloat()
+    public function testCalculateRectangleDiagonalWithDouble()
     {
         $this->assertEquals($this->rechteck->getDiagonale(), sqrt(40.58));
     }

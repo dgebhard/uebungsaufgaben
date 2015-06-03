@@ -4,18 +4,18 @@ class Rechteck implements Figure
 {
 
     /**
-     * @var float
+     * @var double
      */
     private $seiteA;
 
     /**
-     * @var float
+     * @var double
      */
     private $seiteB;
 
     /**
-     * @param float $seiteA
-     * @param float $seiteB
+     * @param double $seiteA
+     * @param double $seiteB
      */
     public function __construct($seiteA, $seiteB)
     {
@@ -25,12 +25,12 @@ class Rechteck implements Figure
         if (!is_numeric($seiteB) || $seiteB < 0) {
             throw new InvalidArgumentException('Die Seite "'.$seiteB.'" ist nicht gültig');
         }
-        $this->seiteA = $seiteA;
-        $this->seiteB = $seiteB;
+        $this->seiteA = (double) $seiteA;
+        $this->seiteB = (double) $seiteB;
     }
 
     /**
-     * @return float
+     * @return double
      */
     public function getUmfang()
     {
@@ -38,7 +38,7 @@ class Rechteck implements Figure
     }
 
     /**
-     * @return float
+     * @return double
      */
     public function getDiagonale()
     {
@@ -46,7 +46,7 @@ class Rechteck implements Figure
     }
 
     /**
-     * @return float
+     * @return double
      */
     public function getFlaeche()
     {

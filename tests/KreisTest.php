@@ -15,17 +15,17 @@ class KreisTest extends PHPUnit_Framework_TestCase
         $this->kreis = new Kreis(5.4);
     }
 
-    public function testCalculateCircleAreaWithFloat()
+    public function testCalculateCircleAreaWithDouble()
     {
         $this->assertEquals($this->kreis->getFlaeche(), 91.60884177867837083357068105643);
     }
 
-    public function testCalculateCircleGirthWithFloat()
+    public function testCalculateCircleGirthWithDouble()
     {
         $this->assertEquals($this->kreis->getUmfang(), 33.929200658769766975396548539419);
     }
 
-    public function testCalculateCircleDiagonalWithFloat()
+    public function testCalculateCircleDiagonalWithDouble()
     {
         $this->assertEquals($this->kreis->getDiagonale(), 10.8);
     }
